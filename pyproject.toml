@@ -1,0 +1,25 @@
+[project]
+name = "fastapi-static-files"
+version = "0.1.0"
+description = "A simple demonstration on how to utilize static files in FastAPI"
+authors = [{ name = "tomit4", email = "mosssap@gmail.com" }]
+dependencies = ["fastapi>=0.112.1", "uvicorn>=0.30.6", "python-dotenv>=1.0.1"]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = ["isort>=5.13.2", "black>=24.8.0"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fastapi_static_files"]
+
+[project.scripts]
+dev = "fastapi_static_files.main:main"
